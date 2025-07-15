@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom romantic animations and styles */
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .romantic-text {
+    font-family: 'Dancing Script', cursive;
+  }
+}
+
+@layer components {
+  /* Romantic card styles */
+  .countdown-card {
+    @apply bg-white/80 backdrop-blur-sm rounded-2xl shadow-romantic border border-white/20 transition-all duration-300 hover:shadow-warm hover:scale-105;
+  }
+  
+  .countdown-card.locked {
+    @apply bg-warm-gray-100/60 opacity-60 cursor-not-allowed;
+  }
+  
+  .countdown-card.unlocked {
+    @apply hover:bg-gradient-soft;
+  }
+  
+  /* Admin panel styles */
+  .admin-card {
+    @apply bg-white rounded-xl shadow-lg border border-warm-gray-200 transition-all duration-200;
+  }
+  
+  /* Button styles */
+  .btn-romantic {
+    @apply bg-gradient-sunset text-white font-medium px-6 py-3 rounded-full transition-all duration-200 hover:shadow-warm hover:scale-105 focus:outline-none focus:ring-2 focus:ring-warm-orange focus:ring-opacity-50;
+  }
+  
+  .btn-soft {
+    @apply bg-soft-pink text-warm-gray-800 font-medium px-6 py-3 rounded-full transition-all duration-200 hover:bg-rose-gold hover:shadow-romantic focus:outline-none focus:ring-2 focus:ring-soft-pink focus:ring-opacity-50;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-warm-orange text-warm-orange font-medium px-6 py-3 rounded-full transition-all duration-200 hover:bg-warm-orange hover:text-white focus:outline-none focus:ring-2 focus:ring-warm-orange focus:ring-opacity-50;
+  }
+  
+  /* Input styles */
+  .input-romantic {
+    @apply w-full px-4 py-3 rounded-xl border border-warm-gray-300 focus:ring-2 focus:ring-warm-orange focus:border-warm-orange transition-colors duration-200 bg-white/80 backdrop-blur-sm;
+  }
+  
+  /* Custom scrollbar */
+  .scrollbar-romantic {
+    scrollbar-width: thin;
+    scrollbar-color: #FEB47B #FEF9E7;
+  }
+  
+  .scrollbar-romantic::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .scrollbar-romantic::-webkit-scrollbar-track {
+    background: #FEF9E7;
+    border-radius: 4px;
+  }
+  
+  .scrollbar-romantic::-webkit-scrollbar-thumb {
+    background: #FEB47B;
+    border-radius: 4px;
+  }
+  
+  .scrollbar-romantic::-webkit-scrollbar-thumb:hover {
+    background: #FF6B6B;
+  }
+}
+
+@layer utilities {
+  .text-shadow-romantic {
+    text-shadow: 0 2px 4px rgba(248, 187, 217, 0.3);
+  }
+  
+  .text-shadow-warm {
+    text-shadow: 0 2px 4px rgba(254, 180, 123, 0.4);
+  }
+  
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Quill editor custom styles */
+.ql-container {
+  border-bottom-left-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+  border-color: #D6D3D1 !important;
+}
+
+.ql-toolbar {
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  border-color: #D6D3D1 !important;
+  background: #FEF9E7;
+}
+
+.ql-editor {
+  min-height: 200px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.ql-editor:focus {
+  outline: none;
+}
+
+/* Loading animation */
+.loading-heart {
+  animation: pulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+} 
